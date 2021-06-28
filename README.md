@@ -120,11 +120,16 @@ Python-tesseract is an optical character recognition (OCR) tool for python. That
 * pip install pytesseract
 
 # Operations
----> Place any paper with Black text data 
----> hold the object or paper in front of the camera and click on the red button , an image will be capture 
----> Then wait for 2 seconds your image will be processed 
----> Text will be display on the Black and White terminal in the screen
+* ---> Place any paper with Black text data 
+* ---> hold the object or paper in front of the camera and click on the red button , an image will be capture 
+* ---> Then wait for 2 seconds your image will be processed 
+* ---> Text will be display on the Black and White terminal in the screen
 # Conclusion 
 Optical Character Recognition is a field of research in Artificial Intelligence and Computer Vision that consists in extracting text from images.
 Today OCR is knowing an unprecedented revolution thanks to using Artificial Intelligence tools.OCR became not only an image-to-text traditional conversion process but also a human mistakes checker.
-          
+# Reference 
+* https://github.com/UB-Mannheim/tesseract/wiki
+* https://projects.raspberrypi.org/en/projects/using-pip-on-raspberry-pi
+* https://pypi.org/project/pytesseract/
+* https://qengineering.eu/install-opencv-4.5-on-raspberry-pi-4.html
+
