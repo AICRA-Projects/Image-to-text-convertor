@@ -30,4 +30,27 @@ Python is a wonderful and powerful programming language that's easy to use (easy
 * $ sudo rpi-eeprom-update
 ###### if needed, to update the firmware
 * $ sudo rpi-eeprom-update -a
-* $ sudo reboot  
+* $ sudo reboot 
+###### Version check.
+Before you install OpenCV on your Raspberry Pi 4, it is time for a final version check. Many readers just jump into the guide, skipping the introduction, often because they have already an operating system working. For those, please give the command uname -a and check your version.
+###### Dependencies.
+The OpenCV software uses other third-party software libraries. These have to be installed first. Some come with the Raspbian operating system, others may have been gathered over time, but it's better to be safe than sorry, so here is the complete list. Only the latest packages are installed by the procedure.
+* $ sudo apt-get update
+* $ sudo apt-get upgrade
+* $ sudo apt-get install cmake gfortran
+* $ sudo apt-get install libjpeg-dev libtiff-dev libgif-dev
+* $ sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+* $ sudo apt-get install libgtk2.0-dev libcanberra-gtk*
+* $ sudo apt-get install libxvidcore-dev libx264-dev libgtk-3-dev
+* $ sudo apt-get install libtbb2 libtbb-dev libdc1394-22-dev libv4l-dev
+* $ sudo apt-get install libopenblas-dev libatlas-base-dev libblas-dev
+* $ sudo apt-get install libjasper-dev liblapack-dev libhdf5-dev
+* $ sudo apt-get install protobuf-compiler
+* $ sudo apt-get install qt5-default
+* $ cd ~
+* $ wget -O opencv.zip https://github.com/opencv/opencv/archive/4.5.0.zip
+* $ wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.5.0.zip
+
+* $ unzip opencv.zip
+* $ unzip opencv_contrib.zip
+ 
