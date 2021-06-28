@@ -34,7 +34,6 @@ Python is a wonderful and powerful programming language that's easy to use (easy
 ###### Version check.
 Before you install OpenCV on your Raspberry Pi 4, it is time for a final version check. Many readers just jump into the guide, skipping the introduction, often because they have already an operating system working. For those, please give the command uname -a and check your version.
 * $ python3 --version
-* 
 ###### Dependencies.
 The OpenCV software uses other third-party software libraries. These have to be installed first. Some come with the Raspbian operating system, others may have been gathered over time, but it's better to be safe than sorry, so here is the complete list. Only the latest packages are installed by the procedure.
 * $ sudo apt-get update
@@ -57,46 +56,51 @@ The OpenCV software uses other third-party software libraries. These have to be 
 * $ unzip opencv_contrib.zip
 * $ mv opencv-4.5.0 opencv
 * $ mv opencv_contrib-4.5.0 opencv_contrib
-Install a virtual environment.
-Step one is some administration. We only use Python 3 because the support of Python 2.7 has stopped at the beginning of 2020. You have first to determine your Python 3 version and location.
-The Python location in the above commands was /usr/bin/python3.7. This location is passed as an argument in the echo command. The next step is installing the virtual environment software. This can be done with the following commands.
+###### Install a virtual environment.
+###### Step one is some administration. We only use Python 3 because the support of Python 2.7 has stopped at the beginning of 2020. You have first to determine your Python 3 version   and location.
+###### The Python location in the above commands was /usr/bin/python3.7. This location is passed as an argument in the echo command. The next step is installing the virtual      environment software. This can be done with the following commands.
 * $ sudo pip3 install virtualenv
 * $ sudo pip3 install virtualenvwrapper
 * $ echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.7" >> ~/.bashrc
-reload profile
+###### reload profile
 * $ source ~/.bashrc
 * $ echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.bashrc
 * $ echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.bashrc
 * $ source ~/.bashrc
 * $ mkvirtualenv cv450
-without sudo!!!!
+###### without sudo!!!!
 * $ pip3 install numpy
-Build Make 
+##### Build Make 
 * $ cd ~/opencv/
 * $ mkdir build
 * $ cd build
 * $ cmake -D CMAKE_BUILD_TYPE=RELEASE \
--D CMAKE_INSTALL_PREFIX=/usr/local \
--D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
--D ENABLE_NEON=ON \
--D ENABLE_VFPV3=ON \
--D WITH_OPENMP=ON \
--D WITH_OPENCL=OFF \
--D BUILD_TIFF=ON \
--D WITH_FFMPEG=ON \
--D WITH_TBB=ON \
--D BUILD_TBB=ON \
--D BUILD_TESTS=OFF \
--D WITH_EIGEN=OFF \
--D WITH_GSTREAMER=OFF \
--D WITH_V4L=ON \
--D WITH_LIBV4L=ON \
--D WITH_VTK=OFF \
--D WITH_QT=OFF \
--D OPENCV_ENABLE_NONFREE=ON \
--D INSTALL_C_EXAMPLES=OFF \
--D INSTALL_PYTHON_EXAMPLES=OFF \
--D BUILD_opencv_python3=TRUE \
--D OPENCV_GENERATE_PKGCONFIG=ON \
--D BUILD_EXAMPLES=OFF ..
- 
+          -D CMAKE_INSTALL_PREFIX=/usr/local \
+          -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules \
+          -D ENABLE_NEON=ON \
+          -D ENABLE_VFPV3=ON \
+          -D WITH_OPENMP=ON \
+          -D WITH_OPENCL=OFF \
+          -D BUILD_TIFF=ON \
+          -D WITH_FFMPEG=ON \
+          -D WITH_TBB=ON \
+          -D BUILD_TBB=ON \
+          -D BUILD_TESTS=OFF \
+          -D WITH_EIGEN=OFF \
+          -D WITH_GSTREAMER=OFF \
+          -D WITH_V4L=ON \
+          -D WITH_LIBV4L=ON \
+          -D WITH_VTK=OFF \
+          -D WITH_QT=OFF \
+          -D OPENCV_ENABLE_NONFREE=ON \
+          -D INSTALL_C_EXAMPLES=OFF \
+          -D INSTALL_PYTHON_EXAMPLES=OFF \
+          -D BUILD_opencv_python3=TRUE \
+          -D OPENCV_GENERATE_PKGCONFIG=ON \
+          -D BUILD_EXAMPLES=OFF ..
+ * Before we can start the actual build, the memory swap space needs to be enlarged. For daily use a swap memory of 100 Mbyte is sufficient. However, with the massive build ahead of use, extra memory space is crucial. Enlarge the swap space with the following command.
+* $ sudo nano /etc/dphys-swapfile
+* This command opens Nano, a very lightweight text editor, with the system file dphys-swapfile. With the arrow keys, you can move the cursor to the CONF_SWAPSIZE line where the new value 2048 can be entered. Next, close the session with the <Ctrl+X> key combination. With <Y> and <Enter> changes are being saved in the same file.
+* $ sudo /etc/init.d/dphys-swapfile stop
+* $ sudo /etc/init.d/dphys-swapfile start
+* make -j4
