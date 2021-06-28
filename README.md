@@ -1,3 +1,4 @@
+![image](https://roboclub.technoxian.com/email-template/1.jpeg)
 # Real Time Image-to-text-convertor
 Image to Text is basically real time OCR(optical character Recognition)
 It extract the text data from the image and translate to the normal text data which is readable for the human,
