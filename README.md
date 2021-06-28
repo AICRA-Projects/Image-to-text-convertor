@@ -26,8 +26,8 @@ Python is a wonderful and powerful programming language that's easy to use (easy
 * Install Raspberry pi GPIO packages: pip install RPi.GPIO
 * Type " pinout " in Terminal of Raspberry pi 
 ## Step 2 : Install Opencv in Raspberry pi  
-*to get the current status
-$ sudo rpi-eeprom-update
-*if needed, to update the firmware
- $ sudo rpi-eeprom-update -a
- $ sudo reboot  
+###### to get the current status
+* $ sudo rpi-eeprom-update
+###### if needed, to update the firmware
+* $ sudo rpi-eeprom-update -a
+* $ sudo reboot  
