@@ -1,12 +1,17 @@
-![image](https://roboclub.technoxian.com/email-template/2.jpeg)
 # Real Time Image-to-text-convertor
 Image to Text is basically real time OCR(optical character Recognition)
 It extract the text data from the image and translate to the normal text data which is readable for the human,
 The use of OCR by enterprises increases operational efficiency to ensure every customer is satisfied with the services rendered. This technology 
 enables enterprises and organisations to improve customer experience by making unstructured content searchable.
 
-![image](https://roboclub.technoxian.com/email-template/1.jpeg)
 This Project was based on detecting of TEXT data from active camera and capture the words which is displayed in TFT LCD screen of Raspberry pi, This model is created by using python script and single board cpu (raspberry pi 4) 
+
+# how to operate:
+## step 1: Place any paper with Black text data 
+## step 2: hold the object or paper in front of the camera and click on the red button , an image will be capture 
+## step 3: Then wait for 2 seconds your image will be processed 
+## step 4: Text will be display on the Black and White terminal in the screen
+
 # Resources
 Material Required for the Projects 
 ## Hardwares 
