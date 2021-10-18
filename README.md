@@ -12,6 +12,10 @@ This Project was based on detecting of TEXT data from active camera and capture 
 ## step 3: Then wait for 2 seconds your image will be processed 
 ## step 4: Text will be display on the Black and White terminal in the screen
 
+# Circuit Diagram 
+![Push button AI Vehcile Detection System ](https://user-images.githubusercontent.com/42414598/137728743-3485b7cb-738a-4523-b3fb-ebf959fe8b20.jpg)
+
+
 # Resources
 Material Required for the Projects 
 ## Hardwares 
