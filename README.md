@@ -6,6 +6,32 @@ enables enterprises and organisations to improve customer experience by making u
 
 This Project was based on detecting of TEXT data from active camera and capture the words which is displayed in TFT LCD screen of Raspberry pi, This model is created by using python script and single board cpu (raspberry pi 4) 
 
+## Raspberry Pi Touch Display
+The Raspberry Pi Touch Display is an LCD display which connects to the Raspberry Pi through the DSI connector. In some situations, it allows for the use of both the HDMI and LCD displays at the same time (this requires software support).
+![MPI7001-02](https://user-images.githubusercontent.com/42414598/139531359-9877cb44-d8b9-4d0e-bde0-3d61ff9f2ede.jpg)
+
+
+## Board Support
+# Step 1, Install Raspbian official image
+Download the latest image from the official download.
+Install the system according to the official tutorial steps.
+# Step 2, modify the “config.txt”
+After the programming of Step1 is completed, open the config.txt file of TF card root directory and
+add the following code at the end of the file, save and eject Micro SD Card safely:
+max_usb_current=1
+hdmi_force_hotplug=1
+config_hdmi_boost=7
+hdmi_group=2
+hdmi_mode=87
+hdmi_drive=1
+display_rotate=0
+hdmi_cvt 1024 600 60 6 0 0 0
+# Step 3, Drive the 5inch HDMI Display-B with the Raspberry Pi
+Insert the TF Card to Raspberry Pi, connect the Raspberry Pi and LCD by HDMI cable; connect USB cable to one of the four USB ports of Raspberry Pi,
+and connect the other end of the USB cable to the USB port of the LCD; then supply power to Raspberry Pi; after that if the display and touch both are OK,
+it means drive successfully (please use the full 2A for power supply).
+
+
 # how to operate:
 ## step 1: Place any paper with Black text data 
 ## step 2: hold the object or paper in front of the camera and click on the red button , an image will be capture 
